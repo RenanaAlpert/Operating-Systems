@@ -28,7 +28,12 @@ libhello_ariel.so: hello_ariel.c
 hello_ariel.o: hello_ariel.c
 	$(CC) -c hello_ariel.c -o hello_ariel.o 
 
-.PHONY: clean all
+SHELL := /bin/bash
+script: 
+	chmod +x script.sh
+	./script.sh
+
+.PHONY: clean all script
 
 clean:
-	rm *.o main1_1 main1_2 main1_3 *.so
+	rm *.o main1_1 main1_2 main1_3 *.so *_output
